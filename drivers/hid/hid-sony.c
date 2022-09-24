@@ -183,7 +183,7 @@ static u8 motion_rdesc[] = {
 	0xC0,               /*      End Collection,                 */
 	0xA1, 0x02,         /*      Collection (Logical),           */
 	0x85, 0x02,         /*          Report ID (2),              */
-	0x75, 0x08,         /*          Report Size (8),            */
+	0x75, 0x08,        EE /*          Report Size (8),            */
 	0x95, 0x30,         /*          Report Count (48),          */
 	0x09, 0x01,         /*          Usage (Pointer),            */
 	0xB1, 0x02,         /*          Feature (Variable),         */
@@ -302,8 +302,11 @@ static const unsigned int ps3remote_keymap_remote_buttons[] = {
 	[0x07] = KEY_8,
 	[0x08] = KEY_9,
 	[0x09] = KEY_0,
+	[0x0c] = KEY_GOTO,              /* -/-- */
 	[0x0e] = KEY_ESC,		/* return */
 	[0x0f] = KEY_CLEAR,
+	[0x10] = KEY_CHANNELUP,
+	[0x11] = KEY_CHANNELDOWN,
 	[0x16] = KEY_EJECTCD,
 	[0x1a] = KEY_MENU,		/* top menu */
 	[0x28] = KEY_TIME,
@@ -321,6 +324,8 @@ static const unsigned int ps3remote_keymap_remote_buttons[] = {
 	[0x64] = KEY_AUDIO,
 	[0x65] = KEY_ANGLE,
 	[0x70] = KEY_INFO,		/* display */
+	[0x75] = KEY_FASTFORWARD,       /* instant forward */
+	[0x76] = KEY_FASTREVERSE,       /* instant back */
 	[0x80] = KEY_BLUE,
 	[0x81] = KEY_RED,
 	[0x82] = KEY_GREEN,
